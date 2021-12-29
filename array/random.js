@@ -1,4 +1,4 @@
-/** @param {Array} list */
+/** @param {Array<any>} list */
 module.exports = function(list) {
   const random = list.map((item, index) => ({
     index,
