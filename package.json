@@ -1,10 +1,9 @@
 {
   "name": "@ppzp/utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "lodash 太重，不爱用",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -14,7 +13,7 @@
     "lodash"
   ],
   "author": "gy",
-  "license": "ISC",
+  "license": "UNLICENSE",
   "bugs": {
     "url": "https://github.com/ppz-pro/utils.js/issues"
   },

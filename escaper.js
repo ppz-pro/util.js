@@ -1,5 +1,3 @@
-// copy from https://github.com/WebReflection/html-escaper
-
 const replace = String.prototype.replace
 
 exports.escape = create(
