@@ -1,6 +1,6 @@
 {
   "name": "@ppzp/utils",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "一些 js 小工具",
   "main": "index.js",
   "scripts": {},
