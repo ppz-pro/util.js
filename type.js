@@ -3,22 +3,30 @@ exports.isNil = function(target) {
 }
 
 /** 判断数字 */
-exports.isNumber = function(target) {
-  return typeof(target) === 'number' && (!isNaN(target))
+exports.isNum = function(target) {
+  return typeof(target) == 'number' && (!isNaN(target))
+}
+/** 判断非负数 */
+exports.isUNum = function(target) {
+  return exports.isNum(target) && target >= 0
+}
+/** 判断正数 */
+exports.isPNum = function(target) {
+  return exports.isNum(target) && target > 0
 }
 
 /** 判断整形 */
 exports.isInt = function(target) {
-  return isNumber(target) && (target === Math.floor(target))
+  return isNum(target) && (target == Math.floor(target))
 }
 
-/** 判断正整数 */
+/** 判断非负整数 */
 exports.isUInt = function(target) {
   return isInt(target) && target >= 0
 }
 
 /** 判断正整数 */
-exports.isPoInt = function(target) {
+exports.isPInt = function(target) {
   return isInt(target) && target > 0
 }
 
