@@ -21,3 +21,15 @@ exports.isUnInt = function(target) {
 exports.isPoInt = function(target) {
   return isInt(target) && target > 0
 }
+
+/** 判断字符串 */
+exports.isString = function(target) {
+  // 本来简单的逻辑不应出现在库里
+  // 但考虑到这个“简单的逻辑”可能是错的，于是以后如果发现是错的，可以在此处修改逻辑，以免到处改
+  return typeof target == 'string'
+}
+
+/** 判断空字符串 */
+exports.notEmptyString = function(target) {
+  return exports.isString(target) && target.length > 0
+}
