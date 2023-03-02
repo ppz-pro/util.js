@@ -13,7 +13,7 @@ exports.isInt = function(target) {
 }
 
 /** 判断正整数 */
-exports.isUnInt = function(target) {
+exports.isUInt = function(target) {
   return isInt(target) && target >= 0
 }
 
