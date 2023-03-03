@@ -1,24 +1,30 @@
-// 注意 this！
-// xxxEvent.listen 语义性更强，于是坚持使用 class
+const Logger = () => globalThis?.__logger || console
 
-exports.Event =
-class Event {
-  #handlers = []
+module.exports = function Event() {
+  const handlers = []
 
-  listen(handler) {
-    this.#handlers.push(handler)
-    return () => this.stopListen(handler)
+  function listen(handler) {
+    handlers.push(handler)
+    return () => stopListen(handler)
   }
 
-  stopListen(handler) {
-    this.#handlers.splice(
-      this.#handlers.indexOf(handler),
+  function stopListen(handler) {
+    handlers.splice(
+      handlers.indexOf(handler),
       1
     )
   }
 
-  emit() {
-    for(let h of this.#handlers)
-      h(...arguments)
+  function emit() {
+    for(let h of handlers)
+      try {
+        h(...arguments)
+      } catch(err) {
+        Logger.error(err)
+      }
+  }
+
+  return {
+    listen, stopListen, emit
   }
 }
