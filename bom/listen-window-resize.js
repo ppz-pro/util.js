@@ -1,6 +1,6 @@
-import { Event } from '../event'
+import Event from '../event'
 
-const resizeEvent = new Event()
+const resizeEvent = Event()
 
 window.onresize = function() {
   resizeEvent.emit(...arguments)
