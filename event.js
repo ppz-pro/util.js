@@ -16,12 +16,13 @@ module.exports = function Event() {
   }
 
   function emit() {
-    for(let h of handlers)
+    return handlers.map(h => {
       try {
-        h(...arguments)
+        return h(...arguments)
       } catch(err) {
         Logger.error(err)
       }
+    })
   }
 
   return {
