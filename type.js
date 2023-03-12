@@ -3,20 +3,20 @@ exports.isNil = function(target) {
 }
 
 /** 判断数字 */
-exports.isNum = function(target) {
+const isNum = exports.isNum = function(target) {
   return typeof(target) == 'number' && (!isNaN(target))
 }
 /** 判断非负数 */
 exports.isUNum = function(target) {
-  return exports.isNum(target) && target >= 0
+  return isNum(target) && target >= 0
 }
 /** 判断正数 */
 exports.isPNum = function(target) {
-  return exports.isNum(target) && target > 0
+  return isNum(target) && target > 0
 }
 
 /** 判断整形 */
-exports.isInt = function(target) {
+const isInt = exports.isInt = function(target) {
   return isNum(target) && (target == Math.floor(target))
 }
 
