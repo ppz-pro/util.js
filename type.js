@@ -38,11 +38,16 @@ exports.isString = function(target) {
 }
 
 /** 判断非空字符串（是字符串，但非空） */
-exports.notEmptyString = function(target) {
+exports.nonEmptyString = function(target) {
   return exports.isString(target) && target.length > 0
 }
 
 /** 判断所有参数是否为 checker 类型 */
 exports.checkAll = function(checker, ...args) {
   return args.every(checker)
+}
+
+/** 判断是否为函数 */
+exports.isFunction = function(target) {
+  return typeof target == 'function'
 }
