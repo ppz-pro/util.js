@@ -37,7 +37,12 @@ exports.isString = function(target) {
   return typeof target == 'string'
 }
 
-/** 判断空字符串 */
+/** 判断非空字符串（是字符串，但非空） */
 exports.notEmptyString = function(target) {
   return exports.isString(target) && target.length > 0
+}
+
+/** 判断所有参数是否为 checker 类型 */
+exports.checkAll = function(checker, ...args) {
+  return args.every(checker)
 }
