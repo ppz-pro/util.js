@@ -51,3 +51,8 @@ exports.checkAll = function(checker, ...args) {
 exports.isFunction = function(target) {
   return typeof target == 'function'
 }
+
+/** 判断基本数据类型 */
+exports.isPrimative = function(target) {
+  return typeof target != 'object' && typeof target != 'function' || target === null
+}
